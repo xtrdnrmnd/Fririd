@@ -14,7 +14,7 @@ include('footer.php');
     <!--CSS-->
     <link rel="stylesheet" href="/style.css" />
 
-</head>sdsd
+</head>
 
 <body>
 
