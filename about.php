@@ -2,7 +2,6 @@
 <?php
 include('header.php');
 include('footer.php');
-//include('menu.php');
 ?>
 <html>
 

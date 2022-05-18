@@ -2,7 +2,6 @@
 <?php
 include('header.php');
 include('footer.php');
-//include('menu.php');
 ?>
 <html>
 
@@ -21,8 +20,6 @@ include('footer.php');
 </head>
 
 <body>
-
-
 
 </body>
 

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
 include('header.php');
-include('footer.php');
-//include('menu.php');
+include('footer.php');;
 ?>
 <html>
 
@@ -12,8 +11,12 @@ include('footer.php');
     <title>browse</title>
 
     <!--CSS-->
-    <link rel="stylesheet" href="/style.css" />
-
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        #menu-items {
+            background-color: #F4C095;
+        }
+    </style>
 </head>
 
 <body>

@@ -1,5 +1,8 @@
 <header>
     <div class="wrapper2">
+        <div id="logo">
+        </div>
+        <div id="current-location"></div>
         <div id="menu">
             <div class="block">
             </div>

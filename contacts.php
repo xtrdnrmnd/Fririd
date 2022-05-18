@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
-//include('header.php');
+include('header.php');
 include('footer.php');
-//include('menu.php');
 ?>
 <html>
 
@@ -16,6 +15,22 @@ include('footer.php');
     <style>
         .wrapper .footer a {
             color: #1D7874;
+        }
+
+        #menu-items {
+            background-color: #679289;
+        }
+
+        .block {
+            background: #1D7874;
+        }
+
+        #menu:hover .block {
+            background: #071E22;
+        }
+
+        #logo {
+            background-image: url("./images/logos/Logo-blue.png");
         }
     </style>
 </head>

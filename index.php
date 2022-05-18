@@ -2,7 +2,6 @@
 <?php
 include('header.php');
 include('footer.php');
-//include('menu.php');
 ?>
 <html>
 
@@ -16,6 +15,10 @@ include('footer.php');
     <style>
         .wrapper .footer a {
             color: #F4C095;
+        }
+
+        #menu-items {
+            background-color: #071E22;
         }
     </style>
 </head>
