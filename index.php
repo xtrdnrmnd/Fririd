@@ -17,6 +17,10 @@ include('footer.php');
             color: #F4C095;
         }
 
+        .block {
+            background: #F4C095;
+        }
+
         #menu-items {
             background-color: #071E22;
         }
@@ -24,13 +28,13 @@ include('footer.php');
 </head>
 
 <body id="landingPage">
-    <form action="" method="POST">
-        <label><input type="text" name="fromName" class="from_name" required>
-            <input type="text" name="toName" class="to_name" required>
-        </label>
-        <input type="submit" name="Search" value="Search" id="search_btn">
-    </form>
-
+    <div class="wrapper">
+        <form action="" method="POST">
+            <input type="text" name="fromName" class="from_name" placeholder="From..." required>
+            <input type="text" name="toName" class="to_name" placeholder="To..." required>
+            <input type="submit" name="Search" value="Search" id="search_btn">
+        </form>
+    </div>
 
 </body>
 

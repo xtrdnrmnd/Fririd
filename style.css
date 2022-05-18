@@ -51,7 +51,8 @@ a {
 }
 
 #landingPage {
-    background-color: #071E22;
+    background-image: url("./images/background.png");
+    background-size: cover;
 }
 
 .menu {
@@ -186,4 +187,42 @@ a {
     grid-row-end: 3;
     align-items: center;
     background-image: url("./images/logos/Logo-orange.png");
+}
+
+
+
+.wrapper form {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+.wrapper form input {
+    width: 450px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    margin-bottom: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120.52%;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#search_btn {
+    background: #EE2E31;
+    border-radius: 50px;
+    width: 310px;
+    height: 65px;
+    /* or 48px */
+    color: #FFFFFF;
+    margin-left: 15%;
 }

@@ -16,10 +16,19 @@ include('footer.php');;
         #menu-items {
             background-color: #F4C095;
         }
+
+        .wrapper .footer a,
+        #menu-items li a {
+            color: #071E22;
+        }
+
+        #logo {
+            background-image: url("./images/logos/Logo-dblue.png");
+        }
     </style>
 </head>
 
-<body>
+<body id="browse">
 
 
 
