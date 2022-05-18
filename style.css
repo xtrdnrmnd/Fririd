@@ -90,7 +90,7 @@ a {
 }
 
 #contact-text {
-    grid-area: 3 / 2 / 4 / 10;
+    grid-area: 2 / 2 / 4 / 10;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -103,7 +103,7 @@ a {
 #git {
     grid-column-start: 11;
     grid-column-start: 11;
-    grid-row-start: 5;
+    grid-row-start: 3;
     grid-row-end: 8;
     justify-self: center;
     align-self: center;
@@ -189,19 +189,27 @@ a {
     background-image: url("./images/logos/Logo-orange.png");
 }
 
-
+#location-icon {
+    background-image: url("./images/location-icons/location-icon-orange.png");
+    width: 42px;
+    height: 52px;
+    background-size: cover;
+    grid-column-start: 18;
+    grid-row-start: 2;
+    margin-top: 18px;
+}
 
 .wrapper form {
     grid-column-start: 6;
     grid-column-end: 8;
     justify-self: center;
     align-self: center;
-    grid-row-start: 6;
+    grid-row-start: 4;
     grid-row-end: 8;
 }
 
 .wrapper form input {
-    width: 450px;
+    width: 470px;
     height: 60px;
     background: #FFFFFF;
     border-radius: 50px;
@@ -224,5 +232,18 @@ a {
     height: 65px;
     /* or 48px */
     color: #FFFFFF;
-    margin-left: 15%;
+    margin-left: 17%;
+}
+
+header .wrapper2 #current-location {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120.52%;
+    color: #FFFFFF;
+    grid-column-start: 16;
+    grid-row-start: 3;
+    align-self: flex-start;
+    margin-top: -15px;
 }

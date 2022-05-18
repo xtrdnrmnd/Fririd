@@ -1,8 +1,22 @@
+<?php
+function ip_visitor_country()
+{
+
+    $countrycode = "None";
+    if ($a = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='))) {
+        $countrycode = $a['geoplugin_countryName'];
+    }
+    return $countrycode;
+}
+
+?>
 <header>
     <div class="wrapper2">
         <div id="logo">
         </div>
-        <div id="current-location"></div>
+        <div id="current-location"><?php echo ip_visitor_country(); ?></div>
+        <div id=location-icon>
+        </div>
         <div id="menu">
             <div class="block">
             </div>

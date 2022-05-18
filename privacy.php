@@ -24,6 +24,10 @@ include('footer.php');
         #logo {
             background-image: url("./images/logos/Logo-dblue.png");
         }
+
+        #location-icon {
+            background-image: url("./images/location-icons/location-icon-dblue.png");
+        }
     </style>
 
 </head>

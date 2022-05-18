@@ -20,6 +20,10 @@ include('footer.php');
         #menu-items {
             background-color: #071E22;
         }
+
+        .block {
+            background: #F4C095;
+        }
     </style>
 </head>
 

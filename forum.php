@@ -12,6 +12,10 @@ include('footer.php');
         .wrapper .footer a {
             color: #F4C095;
         }
+
+        .block {
+            background: #F4C095;
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>

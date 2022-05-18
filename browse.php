@@ -22,6 +22,10 @@ include('footer.php');;
             color: #071E22;
         }
 
+        #location-icon {
+            background-image: url("./images/location-icons/location-icon-dblue.png");
+        }
+
         #logo {
             background-image: url("./images/logos/Logo-dblue.png");
         }
