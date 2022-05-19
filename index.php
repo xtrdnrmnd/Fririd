@@ -30,55 +30,31 @@ include('footer.php');
 <body id="landingPage">
     <div class="wrapper">
         <form action="" method="POST">
-            <input type="text" name="fromName" class="from_name" placeholder="From..." required>
+            <input type="text" name="fromName" class="from_name" placeholder="From...">
             <input type="text" name="toName" class="to_name" placeholder="To..." required>
             <input type="submit" name="Search" value="Search" id="search_btn">
         </form>
     </div>
-
+    <?php
+    if (isset($_POST['toName'])) {
+        $db = mysqli_connect("localhost", "root", "") or die("Check your connection");
+        mysqli_select_db($db, "countries") or die("Connection failed");
+        $result = mysqli_query($db, "SELECT countryName FROM country");
+        $array = mysqli_fetch_array($result);
+        do {
+            $x = True;
+            if ($_POST['toName'] == $array['countryName']) {
+                header("Location: search_result.php");
+                $x = False;
+            }
+        } while ($array = mysqli_fetch_array($result));
+        if ($x = True) { ?>
+            <div class="search-mistake"><?php echo "Please check the spelling!"; ?></div>
+    <?php }
+    }
+    ?>
 </body>
 
 </html>
 
 <?php
-
-if (isset($_POST['Search'])) {
-    $From = $_POST['fromName'];
-    $To = $_POST['toName'];
-    $openFile = "countries.txt";
-    $readFile = fopen($openFile, 'r+');
-
-    $match = null;
-    $match2 = null;
-    while (($line = stream_get_line($fp, 1024 * 1024, "\n")) !== false) {
-        if (trim($line) === trim($To)) {
-            $match = trim($line);
-            break;
-        }
-    }
-    while (($line = stream_get_line($fp, 1024 * 1024, "\n")) !== false) {
-        if (trim($line) === trim($From)) {
-            $match = trim($line);
-            break;
-        }
-    }
-    fclose($fp);
-
-    if (!empty($match)) {
-        header("Location: search_result.php");
-        exit;
-    } else {
-        echo "Check the search data";
-    }
-}
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['postdata'] = $_POST;
-    unset($_POST);
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-?>
