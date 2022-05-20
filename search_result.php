@@ -45,6 +45,9 @@ include('footer.php');
             die("Connection failed: " . $db->connect_error);
         }
         $table = 'country';
+
+        // Check the id thing to get required data
+
         $result = $db->query("SELECT flag_dir FROM $table WHERE id=1") or die($db->error);
         while ($data = $result->fetch_assoc()) {
             echo "<img src={$data['flag_dir']} class='img-circle'>";

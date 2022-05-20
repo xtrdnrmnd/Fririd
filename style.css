@@ -254,3 +254,17 @@ header .wrapper2 #current-location {
     height: 150px;
     grid-column-start: 3;
 }
+
+#about #about-text {
+    width: 800px;
+    text-align: left;
+    height: auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 160%;
+    color: #FFFFFF;
+    grid-column-start: 6;
+    grid-row-start: 3;
+}
