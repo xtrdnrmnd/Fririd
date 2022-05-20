@@ -247,3 +247,10 @@ header .wrapper2 #current-location {
     align-self: flex-start;
     margin-top: -15px;
 }
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    grid-column-start: 3;
+}

@@ -34,25 +34,25 @@ include('footer.php');
             <input type="text" name="toName" class="to_name" placeholder="To..." required>
             <input type="submit" name="Search" value="Search" id="search_btn">
         </form>
+        <?php
+        if (isset($_POST['toName'])) {
+            $db = mysqli_connect("localhost", "root", "") or die("Check your connection");
+            mysqli_select_db($db, "countries") or die("Connection failed");
+            $result = mysqli_query($db, "SELECT countryName FROM country");
+            $array = mysqli_fetch_array($result);
+            do {
+                $x = True;
+                if ($_POST['toName'] == $array['countryName']) {
+                    header("Location: search_result.php");
+                    $x = False;
+                }
+            } while ($array = mysqli_fetch_array($result));
+            if ($x = True) { ?>
+                <div class="mistake" style="color: #FFFFFF;font-family: 'Inter';font-style: normal;font-weight: 500; font-size: 28px;grid-column-start: 7;grid-row-start: 2;width:400px;"><?php echo "Please check the spelling!"; ?></div>
+        <?php }
+        }
+        ?>
     </div>
-    <?php
-    if (isset($_POST['toName'])) {
-        $db = mysqli_connect("localhost", "root", "") or die("Check your connection");
-        mysqli_select_db($db, "countries") or die("Connection failed");
-        $result = mysqli_query($db, "SELECT countryName FROM country");
-        $array = mysqli_fetch_array($result);
-        do {
-            $x = True;
-            if ($_POST['toName'] == $array['countryName']) {
-                header("Location: search_result.php");
-                $x = False;
-            }
-        } while ($array = mysqli_fetch_array($result));
-        if ($x = True) { ?>
-            <div class="search-mistake"><?php echo "Please check the spelling!"; ?></div>
-    <?php }
-    }
-    ?>
 </body>
 
 </html>

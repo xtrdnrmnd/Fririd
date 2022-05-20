@@ -29,7 +29,7 @@ include('footer.php');
 
 <body id="about">
 
-
+    <div id="about-text"> </div>
 
 </body>
 
