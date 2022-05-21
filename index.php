@@ -29,12 +29,16 @@ include('footer.php');
 
 <body id="landingPage">
     <div class="wrapper">
-        <form action="" method="POST">
+        <form action="search_result.php" method="POST">
             <input type="text" name="fromName" class="from_name" placeholder="From...">
             <input type="text" name="toName" class="to_name" placeholder="To..." required>
             <input type="submit" name="Search" value="Search" id="search_btn">
         </form>
         <?php
+
+        // Initialize the session
+        session_start();
+
         if (isset($_POST['toName'])) {
             $db = mysqli_connect("localhost", "root", "") or die("Check your connection");
             mysqli_select_db($db, "countries") or die("Connection failed");

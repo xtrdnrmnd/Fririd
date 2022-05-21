@@ -31,11 +31,18 @@ include('footer.php');
     <div class="wrapper">
 
         <?php
+
+        //Initializing the session
+        session_start();
+
+
         //DB 
         $dbHost     = 'localhost';
         $dbUsername = 'root';
         $dbPassword = '';
         $dbName     = 'countries';
+
+        $_SESSION['toName'] = $_POST['toName'];
 
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -48,7 +55,7 @@ include('footer.php');
 
         // Check the id thing to get required data
 
-        $result = $db->query("SELECT flag_dir FROM $table WHERE id=1") or die($db->error);
+        $result = $db->query("SELECT flag_dir FROM $table WHERE countryName = '" . $_SESSION['toName'] . "'") or die($db->error);
         while ($data = $result->fetch_assoc()) {
             echo "<img src={$data['flag_dir']} class='img-circle'>";
         }
