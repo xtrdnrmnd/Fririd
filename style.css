@@ -253,6 +253,7 @@ header .wrapper2 #current-location {
     width: 150px;
     height: 150px;
     grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 #about #about-text {
@@ -280,7 +281,9 @@ header .wrapper2 #current-location {
     align-items: center;
     text-align: right;
     color: #FFFFFF;
-    grid-column-start: 9;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    justify-self: end;
     grid-row-start: 2;
     margin-top: -15px;
 }
@@ -297,18 +300,22 @@ header .wrapper2 #current-location {
     text-align: right;
     color: #FFFFFF;
     grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 2;
     margin-top: -10px;
+    justify-self: start;
 }
 
 .country-data {
     width: 500px;
     height: 500px;
     grid-column-start: 7;
-    grid-column-end: 13;
+    grid-column-end: 11;
     grid-row-start: 4;
     background: #EE2E31;
     border-radius: 20px;
+    justify-self: end;
+    ;
 }
 
 .info {
