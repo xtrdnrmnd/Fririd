@@ -300,3 +300,29 @@ header .wrapper2 #current-location {
     grid-row-start: 2;
     margin-top: -10px;
 }
+
+.country-data {
+    width: 500px;
+    height: 500px;
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    background: #EE2E31;
+    border-radius: 20px;
+}
+
+.info {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 12;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 160%;
+    /* or 77px */
+
+    color: #FFFFFF;
+
+}

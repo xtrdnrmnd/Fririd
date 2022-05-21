@@ -62,6 +62,8 @@ include('footer.php');
         }
         ?>
         <div id="search-r-rate">9,3</div>
+        <div class="country-data"></div>
+        <div class='info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae tortor condimentum lacinia quis vel.</div>
     </div>
 </body>
 
