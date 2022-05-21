@@ -268,3 +268,35 @@ header .wrapper2 #current-location {
     grid-column-start: 6;
     grid-row-start: 3;
 }
+
+.search-r-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 120.52%;
+    /* or 169px */
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    grid-column-start: 9;
+    grid-row-start: 2;
+    margin-top: -15px;
+}
+
+#search-r-rate {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 130px;
+    line-height: 120.52%;
+    /* or 169px */
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    grid-column-start: 6;
+    grid-row-start: 2;
+    margin-top: -10px;
+}

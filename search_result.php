@@ -55,11 +55,13 @@ include('footer.php');
 
         // Check the id thing to get required data
 
-        $result = $db->query("SELECT flag_dir FROM $table WHERE countryName = '" . $_SESSION['toName'] . "'") or die($db->error);
+        $result = $db->query("SELECT flag_dir, alterName FROM $table WHERE countryName = '" . $_SESSION['toName'] . "'") or die($db->error);
         while ($data = $result->fetch_assoc()) {
             echo "<img src={$data['flag_dir']} class='img-circle'>";
+            echo "<div class='search-r-name'>{$data['alterName']}</div>";
         }
         ?>
+        <div id="search-r-rate">9,3</div>
     </div>
 </body>
 
