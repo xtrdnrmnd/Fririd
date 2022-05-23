@@ -59,8 +59,8 @@ def ScrapTheList(url):
                         df2 = df2.append(pd.Series(values, index=columns),
                                          ignore_index=True)
 
-                    df2.to_csv(r'visa.csv', mode='a', index=False)
-                print("done with "+a)
+                    df2.to_csv(r'data/visa.csv', mode='a', index=False)
+                print("done with " + a)
         listOfLists.clear()
 
 
