@@ -1,4 +1,0 @@
-SMAX = 10
-VMAX = 10
-BMAX = 10
-PMAX = 10
