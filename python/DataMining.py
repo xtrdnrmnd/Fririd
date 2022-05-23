@@ -1,5 +1,6 @@
 # Data Mining
 import csv
+import sys
 # WEIGHTS of the modules
 STATUS = 5
 VISA = 2
@@ -12,18 +13,29 @@ SMAX = 3
 # Safety: very safe, safe, not safe, dangerous
 BMAX = 10
 # Price: very cheap, cheap, medium, expensive, very expensive - overall 10 (2 for each category)
-PMAX = 5
+PMAX = 10
 # Visa: no, visa on Arrival, eVisa, visa required
 VMAX = 4
 
 
 # Function to calculate the status
-def status(f, t):
-    print("kek")
-    return 3
-
+def status(toC):
+    with open('./data/status.csv', 'r') as f:
+        mycsv = csv.reader(f)
+        status = ""
+        for row in mycsv:
+            if row[0] == toC:
+                status = row[1]
+    if status == "Open":
+        return 3
+    elif status == "Closed":
+        return 1
+    else:
+        return 2
 
 # Function to calculate the safety
+
+
 def safety(toC):
     with open('./data/crimeIndex.csv', 'r') as f:
         mycsv = csv.reader(f)
@@ -181,7 +193,7 @@ def count(S, V, B, P):
 
 
 def main(fromC, toC):
-    return count(status(fromC, toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
+    return count(status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
 
 
-safety("Russia")
+main(sys.argv[1], sys.argv[2])
