@@ -193,7 +193,10 @@ def count(S, V, B, P):
 
 
 def main(fromC, toC):
-    return count(status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
+    res = []
+    res.append(count(status(toC), visa(fromC, toC), safety(toC), expenses(
+        fromC, toC)), status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
+    return res
 
 
 main(sys.argv[1], sys.argv[2])
