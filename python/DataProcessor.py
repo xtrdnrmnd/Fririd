@@ -55,6 +55,7 @@ def safety(toC):
         for row in mycsv2:
             if toC in row[2]:
                 numQ += 1
+    print(numQ)
     final = 0
     if float(rate) >= crimeDevider * 4:
         print("1 "+rate)
@@ -189,14 +190,14 @@ def expenses(fromC, toC):
 # Algorithm to calculate the rating
 def count(S, V, B, P):
     R = S * STATUS / SMAX + V * VISA / VMAX + B * SAFETY / BMAX + PRICE / PMAX
-    print(R)
+    return R
 
 
 def main(fromC, toC):
     res = []
-    res.append(count(status(toC), visa(fromC, toC), safety(toC), expenses(
-        fromC, toC)), status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
+    res.append([count(3, visa(fromC, toC), 9, 9),
+                status(toC), visa(fromC, toC)])
     return res
 
 
-main(sys.argv[1], sys.argv[2])
+print(main("Russia", "Andorra"))

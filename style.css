@@ -333,3 +333,56 @@ header .wrapper2 #current-location {
     color: #FFFFFF;
 
 }
+
+.wrapper form {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin-left: -370px;
+    margin-top: 150px;
+    line-height: 120.52%;
+    text-align: center;
+}
+
+.wrapper .forum-input .comment_section {
+    /* Rectangle 14 */
+    width: 450px;
+    height: 300px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.wrapper .forum-input .comment_name,
+.wrapper .forum-input .hashtag {
+    width: 200px;
+    height: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+
+.wrapper #sub_btn {
+    background: #EE2E31;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    width: 200px;
+    height: 50px;
+    color: #FFFFFF;
+    display: inline-block;
+    z-index: 200;
+    border-style: none;
+    grid-column-start: 3;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    align-self: center;
+}

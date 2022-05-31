@@ -21,43 +21,33 @@ include('footer.php');
 </head>
 
 <body id="forum">
-    <form action="" method="POST">
-        <label>
-            <input type="text" name="Name" class="comment_name" required>
-        </label><br><br>
-        <label>
-            <textarea name="Comment" class="comment_section" required></textarea>
-        </label><br><br>
-        <input type="submit" name="Submit" value="Submit" id="sub_btn">
-    </form>
+
+    <div class="wrapper">
+        <form method="POST" action="">
+            <div class="forum-input">
+                <input type="text" name="Name" class="comment_name" placeholder="Name" required>
+                <textarea name="Comment" class="comment_section" placeholder="Leave your story here" required></textarea>
+                <input type="text" name="Hashtag1" placeholder="Hashtag" class="hashtag">
+                <input type="text" name="Hashtag2" placeholder="Hashtag" class="hashtag">
+            </div>
+            <input type="submit" name="AddComment" value="Submit" id="sub_btn">
+        </form>
+    </div>
+
+
 </body>
 
 </html>
 
 <?php
 
-if (isset($_POST['Submit'])) {
-    /*print "<h1>Your comment has been submitted!</h1>";*/
+if (isset($_POST['AddComment'])) {
+    $db = mysqli_connect("localhost", "root", "", "countries") or die("Check your connection" . mysqli_connect_error());
     $Name = $_POST['Name'];
     $Comment = $_POST['Comment'];
-    #Get old comments
-    $old = fopen("comments.txt", "r+t");
-    $old_comments = fread($old, 1024);
-    #Delete everything, write down new and old comments
-    $write = fopen("comments.txt", "w+");
-    $string = "<b>" . $Name . "</b><br>" . $Comment . "<br>\n" . $old_comments;
-    fwrite($write, $string);
-    fclose($write);
-    fclose($old);
-}
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['postdata'] = $_POST;
-    unset($_POST);
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
+    $Hashtag1 = $_POST['Hashtag1'];
+    $Hashtag2 = $_POST['Hashtag2'];
+    $sql = "INSERT INTO `comments` (`nm`, `hashtag1`, `hashtag2`, `comment`) VALUES ('$Name', '$Hashtag1', '$Hashtag2', '$Comment');";
+    $result = $db->query($sql);
 }
 ?>
