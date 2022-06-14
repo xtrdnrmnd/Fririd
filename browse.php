@@ -33,9 +33,23 @@ include('footer.php');;
 </head>
 
 <body id="browse">
-
-
-
+    <div class="wrapper">
+        <?php
+        $conn = mysqli_connect("localhost", "root", "", "countries");
+        $res = mysqli_query($conn, "SELECT DISTINCT  alterName, flag_dir FROM country ORDER BY alterName ASC");
+        while ($row = mysqli_fetch_object($res)) {
+        ?>
+            <div class="browse-block">
+                <div>
+                    <?php echo $row->alterName; ?>
+                </div>
+                <div>
+                    <?php echo "<img src=" . $row->flag_dir . " class='img-circle'>"; ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
 </body>
 
 </html>

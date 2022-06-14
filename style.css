@@ -386,3 +386,30 @@ header .wrapper2 #current-location {
     grid-row-end: 10;
     align-self: center;
 }
+
+#browse .wrapper {
+    display: inline-block;
+    margin-top: -3s0px;
+    margin-bottom: 150px;
+}
+
+#browse .wrapper .browse-block {
+    background-color: #071E22;
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    box-shadow: -20px 20px #1D7874;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+#browse .wrapper .browse-block:nth-child(even) {
+    margin-right: 69px;
+    float: right;
+}
+
+#browse .wrapper .browse-block:nth-child(odd) {
+    float: left;
+    margin-left: 60px;
+}
