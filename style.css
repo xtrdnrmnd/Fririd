@@ -402,6 +402,7 @@ header .wrapper2 #current-location {
     box-shadow: -20px 20px #1D7874;
     overflow: auto;
     margin-bottom: 50px;
+    display: inline-block;
 }
 
 #browse .wrapper .browse-block:nth-child(even) {
@@ -412,4 +413,39 @@ header .wrapper2 #current-location {
 #browse .wrapper .browse-block:nth-child(odd) {
     float: left;
     margin-left: 60px;
+}
+
+#browse .wrapper .img-circle {
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+
+#browse .wrapper .hed-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 120.52%;
+    /* or 58px */
+    margin-top: 8%;
+    padding-left: 15px;
+    width: 250px;
+    height: 100px;
+    display: flex;
+}
+
+#browse .wrapper .browse-block #rate {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 100%;
+    margin-top: -70px;
+    padding-right: 30px;
+    display: flex;
+    float: right;
+    margin-top: -120px;
 }

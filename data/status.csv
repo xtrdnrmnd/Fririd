@@ -2,7 +2,7 @@ Country, Status
 "France","Closed"
 "Kazakhstan", "Open"
 "Netherlands", "Closed"
-"Malta", "Closed"
+"Malta", "Open"
 "United States", "Partially open"
 "Malaysia", "Closed"
 "Kenya", "Closed"
@@ -13,3 +13,7 @@ Country, Status
 "Spain", "Closed"
 "Qatar", "Open"
 "India",Open
+"Afghanistan", "Open"
+"Albania", "Open"
+"Algeria", "Open"
+"Andorra", "Open"

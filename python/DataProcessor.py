@@ -55,22 +55,22 @@ def safety(toC):
         for row in mycsv2:
             if toC in row[2]:
                 numQ += 1
-    print(numQ)
+    # print(numQ)
     final = 0
     if float(rate) >= crimeDevider * 4:
-        print("1 "+rate)
+       # print("1 "+rate)
         final += 1
     elif float(rate) < crimeDevider * 4 and float(rate) >= crimeDevider * 3:
-        print("2 "+rate)
+        #print("2 "+rate)
         final += 2
     elif float(rate) < crimeDevider * 3 and float(rate) >= crimeDevider * 2:
-        print("3 "+rate)
+        #print("3 "+rate)
         final += 3
     elif float(rate) < crimeDevider * 2 and float(rate) >= crimeDevider:
-        print("4 "+rate)
+        #print("4 "+rate)
         final += 4
     else:
-        print("5 "+rate)
+       # print("5 "+rate)
         final += 5
 
     if (numQ > 7):
@@ -99,18 +99,18 @@ def visa(fromC, toC):
                 if toC in row[1].replace(" ", ""):
                     cStatus = row[2]
 
-        print(cStatus)
+        # print(cStatus)
     if (cStatus == "Visa not required"):
-        print(4)
+        # print(4)
         return 4
     elif (cStatus == "Visa on arrival"):
-        print(3)
+        # print(3)
         return 3
     elif (cStatus == "Visa required"):
-        print(1)
+        # print(1)
         return 1
     else:
-        print(2)
+        # print(2)
         return 2
 
 
@@ -142,48 +142,48 @@ def expenses(fromC, toC):
     costFrom = float(costFrom)
     if (salaryFrom > salaryTo + 800):
         if (costFrom > costTo - 30):
-            print("10 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+          #  print("10 " + str(salaryTo) + " " + str(salaryFrom) +
+           #       "    " + str(costFrom) + " " + str(costTo))
             return 10
         else:
-            print("9 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+           # print("9 " + str(salaryTo) + " " + str(salaryFrom) +
+            #     "    " + str(costFrom) + " " + str(costTo))
             return 9
     elif (salaryFrom > salaryTo + 400 and salaryFrom <= salaryTo + 800):
         if (costFrom > costTo - 30):
-            print("8 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+          #  print("8 " + str(salaryTo) + " " + str(salaryFrom) +
+            #      "    " + str(costFrom) + " " + str(costTo))
             return 8
         else:
-            print("7 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+           # print("7 " + str(salaryTo) + " " + str(salaryFrom) +
+            #    "    " + str(costFrom) + " " + str(costTo))
             return 7
     elif (salaryFrom <= salaryTo + 400 and salaryFrom >= salaryTo - 400):
         if (costFrom > costTo - 30):
-            print("6 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+            # print("6 " + str(salaryTo) + " " + str(salaryFrom) +
+            #      "    " + str(costFrom) + " " + str(costTo))
             return 6
         else:
-            print("5 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+           # print("5 " + str(salaryTo) + " " + str(salaryFrom) +
+            #      "    " + str(costFrom) + " " + str(costTo))
             return 5
     elif (salaryFrom < salaryTo - 400 and salaryFrom >= salaryTo - 800):
         if (costFrom > costTo - 30):
-            print("4 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+           # print("4 " + str(salaryTo) + " " + str(salaryFrom) +
+            #      "    " + str(costFrom) + " " + str(costTo))
             return 4
         else:
-            print("3 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+           # print("3 " + str(salaryTo) + " " + str(salaryFrom) +
+            #      "    " + str(costFrom) + " " + str(costTo))
             return 3
     else:  # salaryto < salaryfrom - 800
         if (costFrom > costTo - 30):
-            print("2 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+            # print("2 " + str(salaryTo) + " " + str(salaryFrom) +
+            #     "    " + str(costFrom) + " " + str(costTo))
             return 2
         else:
-            print("1 " + str(salaryTo) + " " + str(salaryFrom) +
-                  "    " + str(costFrom) + " " + str(costTo))
+            # print("1 " + str(salaryTo) + " " + str(salaryFrom) +
+            # "    " + str(costFrom) + " " + str(costTo))
             return 1
 
 
@@ -197,7 +197,7 @@ def main(fromC, toC):
     res = []
     res.append([count(3, visa(fromC, toC), 9, 9),
                 status(toC), visa(fromC, toC)])
-    return res
+    return count(status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
 
 
-print(main("Russia", "Andorra"))
+print(main(sys.argv[1], sys.argv[2]))
