@@ -337,8 +337,8 @@ header .wrapper2 #current-location {
 .wrapper form {
     grid-column-start: 2;
     grid-row-start: 2;
-    margin-left: -370px;
-    margin-top: 150px;
+    margin-left: 40px;
+    margin-top: 185px;
     line-height: 120.52%;
     text-align: center;
 }
@@ -448,4 +448,59 @@ header .wrapper2 #current-location {
     display: flex;
     float: right;
     margin-top: -120px;
+}
+
+#forum .wrapper .old-comments {
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    width: 674px;
+    height: 432px;
+    border-radius: 30px;
+    grid-column-start: 11;
+    margin-right: 14px;
+    grid-row-start: 2;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#forum .wrapper .old-comments .single-comment {
+    background-color: #F4C095;
+    width: 635px;
+    border-radius: 20px;
+    margin: 10px 0 10px 7px;
+    padding-left: 12px;
+    padding-bottom: 5px;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 23px;
+}
+
+#forum .wrapper .old-comments .single-comment .hashtag {
+    background-color: #EE2E31;
+    border-radius: 30px;
+    color: #FFFFFF;
+    width: auto;
+    height: 35px;
+    float: right;
+    padding: 0 5px 0 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 160%;
+    /* or 38px */
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}
+
+#hashtag-picture {
+    position: absolute;
+    top: 130px;
+    left: 300px;
+    width: 350px;
 }

@@ -16,12 +16,16 @@ include('footer.php');
         .block {
             background: #F4C095;
         }
+
+        #menu-items {
+            background-color: #679289;
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body id="forum">
-
+    <img src="./images/hashtag.png" id="hashtag-picture">
     <div class="wrapper">
         <form method="POST" action="">
             <div class="forum-input">
@@ -32,7 +36,22 @@ include('footer.php');
             </div>
             <input type="submit" name="AddComment" value="Submit" id="sub_btn">
         </form>
+
+        <div class="old-comments">
+            <?php
+            $db = mysqli_connect("localhost", "root", "", "countries") or die("Check your connection" . mysqli_connect_error());
+            $select = "SELECT * FROM comments";
+            $res = mysqli_query($db, $select);
+            if (mysqli_num_rows($res) > 0) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    echo "<div class='single-comment'>" . $row['nm'] . "<div class='hashtag'>#" . $row['hashtag1'] . "</div><div class='hashtag'>#" . $row['hashtag2'] . "</div><br><br>" . $row['comment'] . "</div>";
+                }
+            }
+
+            ?>
+        </div>
     </div>
+
 
 
 </body>
@@ -42,7 +61,6 @@ include('footer.php');
 <?php
 
 if (isset($_POST['AddComment'])) {
-    $db = mysqli_connect("localhost", "root", "", "countries") or die("Check your connection" . mysqli_connect_error());
     $Name = $_POST['Name'];
     $Comment = $_POST['Comment'];
     $Hashtag1 = $_POST['Hashtag1'];
