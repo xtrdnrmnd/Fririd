@@ -26,6 +26,12 @@ include('footer.php');
 
 <body id="forum">
     <img src="./images/hashtag.png" id="hashtag-picture">
+    <div id="search-hashtag-id">
+        <form method="POST" action="">
+            <input type="text" name="search-hashtag" id="search-hashtag" placeholder="Search #hashtag">
+            <input type="submit" name="search-comment" value="Search" id="search-commment-btn">
+        </form>
+    </div>
     <div class="wrapper">
         <form method="POST" action="">
             <div class="forum-input">
@@ -39,15 +45,27 @@ include('footer.php');
 
         <div class="old-comments">
             <?php
+            $html = "";
             $db = mysqli_connect("localhost", "root", "", "countries") or die("Check your connection" . mysqli_connect_error());
             $select = "SELECT * FROM comments";
             $res = mysqli_query($db, $select);
-            if (mysqli_num_rows($res) > 0) {
-                while ($row = mysqli_fetch_assoc($res)) {
-                    echo "<div class='single-comment'>" . $row['nm'] . "<div class='hashtag'>#" . $row['hashtag1'] . "</div><div class='hashtag'>#" . $row['hashtag2'] . "</div><br><br>" . $row['comment'] . "</div>";
+            if (isset($_POST['search-comment'])) {
+                $html = preg_replace('#<div class="single-comment">(.*?)<div>#', '', $html);
+                if (mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        if ($row['hashtag1'] == $_POST['search-hashtag'] || $row['hashtag2'] == $_POST['search-hashtag']) {
+                            echo "<div class='single-comment'>" . $row['nm'] . "<div class='hashtag'>#" . $row['hashtag1'] . "</div><div class='hashtag'>#" . $row['hashtag2'] . "</div><br><br>" . $row['comment'] . "</div>";
+                        }
+                    }
                 }
+            } else {
+                if (mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $html .= "<div class='single-comment'>" . $row['nm'] . "<div class='hashtag'>#" . $row['hashtag1'] . "</div><div class='hashtag'>#" . $row['hashtag2'] . "</div><br><br>" . $row['comment'] . "</div>";
+                    }
+                }
+                echo $html;
             }
-
             ?>
         </div>
     </div>

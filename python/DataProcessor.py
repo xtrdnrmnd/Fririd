@@ -195,9 +195,9 @@ def count(S, V, B, P):
 
 def main(fromC, toC):
     res = []
-    res.append([count(3, visa(fromC, toC), 9, 9),
-                status(toC), visa(fromC, toC)])
-    return count(status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC))
+    res.append([round(count(status(toC), visa(fromC, toC), safety(toC), expenses(fromC, toC)), 2),
+                visa(fromC, toC), safety(toC), expenses(fromC, toC)])
+    return res
 
 
 print(main(sys.argv[1], sys.argv[2]))
